@@ -1,0 +1,42 @@
+用户表
+
+CREATE TABLE IF NOT EXISTS `user`(
+`id` INT UNSIGNED AUTO_INCREMENT,
+`username` VARCHAR(60) NULL,
+`password` VARCHAR(60)  NULL,
+`name` VARCHAR(60)  NULL,
+`sex` VARCHAR(10)  NULL,
+`phone` VARCHAR(30)  NULL,
+`age` VARCHAR(10)  NULL,
+`desc` VARCHAR(100)  NULL,
+`headImg` VARCHAR(300)  NULL,
+`is_vecter` VARCHAR(20)  NULL DEFAULT 'false',
+`is_admin` VARCHAR(20)  NULL DEFAULT 'false',
+PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+宠物表
+CREATE TABLE IF NOT EXISTS `pet`(
+`p_id` INT UNSIGNED AUTO_INCREMENT,
+`u_id` INT,
+`p_sex` VARCHAR(10)  NULL,
+`p_desc` VARCHAR(100)  NULL,
+`type` VARCHAR(30) NULL,
+`p_img` VARCHAR(300)  NULL,
+PRIMARY KEY ( `p_id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+预约挂号表
+CREATE TABLE IF NOT EXISTS `registration`(
+`r_id` INT UNSIGNED AUTO_INCREMENT,
+`uu_id` INT,
+`uv_id` INT,
+`r_desc` VARCHAR(100)  NULL,
+`is_ok` VARCHAR(20)  NULL DEFAULT 'false',
+PRIMARY KEY ( `r_id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
